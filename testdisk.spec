@@ -1,17 +1,18 @@
 Summary:	Tool to check and undelete partition
 Summary(pl):	Narzêdzie sprawdzaj±ce i odzyskuj±ce partycje
 Name:		testdisk
-Version:	5.0
-Release:	0.1
+Version:	5.1
+Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	http://www.cgsecurity.org/%{name}-%{version}.tar.gz
-# Source0-md5:	3e5fd07d02380c8fc2db8a47a0bd3735
+# Source0-md5:	c86eb08730a52a113ae572de75ff9c9e
 Patch0:		%{name}-LIBEXT.patch
 Patch1:		%{name}-va.patch
 URL:		http://www.cgsecurity.org/testdisk.html
 BuildRequires:	e2fsprogs-devel
 BuildRequires:	ncurses-devel >= 5.2
+BuildRequires:	ntfsprogs-devel >= 1.8.5 
 BuildRequires:	progsreiserfs-devel >= 0.3.1-1.rc8.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
