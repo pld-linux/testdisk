@@ -7,6 +7,7 @@ License:	GPL
 Group:		Applications/System
 Source0:	http://www.cgsecurity.org/%{name}-%{version}.tgz
 URL:		http://www.cgsecurity.org/testdisk.html
+BuildRequires:	ncurses-devel >= 5.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,7 +38,9 @@ Narzêdzie sprawdzaj±ce i odzyskujace partycje. Pracuje z partycjami:
 
 %build
 cd src
-%{__make} linux_no_ext2fs CFLAGS="-I%{_includedir}/ncurses"
+%{__make} linux_no_ext2fs \
+	CC=%{__cc} \
+	CFLAGS="-I%{_includedir}/ncurses"
 
 %install
 rm -rf $RPM_BUILD_ROOT
