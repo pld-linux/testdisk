@@ -1,0 +1,50 @@
+--- testdisk-5.4-WIP/src/ntfs_dir.c.org	2004-08-25 19:27:46.000000000 +0200
++++ testdisk-5.4-WIP/src/ntfs_dir.c	2004-10-29 13:13:41.472729256 +0200
+@@ -29,6 +29,8 @@
+  
+ #ifdef HAVE_LIBNTFS
+ 
++#include <sys/stat.h>
++
+ #include <stdio.h>
+ #ifdef HAVE_STDLIB_H
+ #include <stdlib.h>
+@@ -65,7 +67,7 @@
+  * This allows the caller to read directories into their application or
+  * to have different dirent layouts depending on the binary type.
+  */
+-typedef int (*ntfs_filldir_t)(void *dirent, const uchar_t *name,
++typedef int (*ntfs_filldir_t)(void *dirent, const ntfschar *name,
+                 const int name_len, const int name_type, const s64 pos,
+                 const MFT_REF mref, const unsigned dt_type);
+ 
+@@ -74,9 +76,9 @@
+ extern int ntfs_readdir(ntfs_inode *dir_ni, s64 *pos,
+                 void *dirent, ntfs_filldir_t filldir);
+ extern u64 ntfs_inode_lookup_by_name(ntfs_inode *dir_ni,
+-                const uchar_t *uname, const int uname_len);
++                const ntfschar *uname, const int uname_len);
+ time_t ntfs2utc (s64 ntfstime);
+-int list_entry(  struct list_dir_struct *ls, const uchar_t *name, 
++int list_entry(  struct list_dir_struct *ls, const ntfschar *name, 
+ 		const int name_len, const int name_type, const s64 pos,
+ 		const MFT_REF mref, const unsigned dt_type);
+ ntfs_inode * utils_pathname_to_inode (ntfs_volume *vol, ntfs_inode *parent, const char *pathname);
+@@ -100,7 +102,7 @@
+  * list_entry
+  * FIXME: Should we print errors as we go along? (AIA)
+  */
+-int list_entry(  struct list_dir_struct *ls, const uchar_t *name, 
++int list_entry(  struct list_dir_struct *ls, const ntfschar *name, 
+ 		const int name_len, const int name_type, const s64 pos,
+ 		const MFT_REF mref, const unsigned dt_type)
+ {
+@@ -257,7 +259,7 @@
+ 	char *p, *q;
+ 	ntfs_inode *ni;
+ 	ntfs_inode *result  = NULL;
+-	uchar_t    *unicode = NULL;
++	ntfschar    *unicode = NULL;
+ 	char       *ascii   = NULL;
+ 
+ 	if (!vol || !pathname) {
