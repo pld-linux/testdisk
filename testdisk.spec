@@ -31,7 +31,7 @@ partitions:
 - ReiserFS
 
 %description -l pl
-Narzêdzie sprawdzaj±ce i odzyskujace partycje. Pracuje z partycjami:
+Narzêdzie sprawdzaj±ce i odzyskuj±ce partycje. Pracuje z partycjami:
 - FAT12 FAT16 FAT32
 - Linux
 - Linux SWAP (version 1 and 2)
