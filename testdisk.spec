@@ -2,7 +2,7 @@ Summary:	Tool to check and undelete partition
 Summary(pl):	Narzêdzie sprawdzaj±ce i odzyskuj±ce partycje
 Name:		testdisk
 Version:	5.5
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/System
 Source0:	http://www.cgsecurity.org/%{name}-%{version}.tar.gz
@@ -57,6 +57,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_sbindir}
 
 install src/testdisk $RPM_BUILD_ROOT%{_sbindir}
+install src/photorec $RPM_BUILD_ROOT%{_sbindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -64,4 +65,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog INFO NEWS README THANKS doc/*.html doc/*.gif
-%attr(755,root,root) %{_sbindir}/testdisk
+%attr(755,root,root) %{_sbindir}/*
