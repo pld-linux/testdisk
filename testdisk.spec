@@ -2,12 +2,14 @@ Summary:	Tool to check and undelete partition
 Summary(pl):	Narzêdzie sprawdzaj±ce i odzyskuj±ce partycje
 Name:		testdisk
 Version:	4.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/System
 Source0:	http://www.cgsecurity.org/%{name}-%{version}.tgz
+Patch0:		%{name}-va_arg.patch
 URL:		http://www.cgsecurity.org/testdisk.html
 BuildRequires:	ncurses-devel >= 5.2
+BuildRequires:	e2fsprogs-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,10 +37,11 @@ Narzêdzie sprawdzaj±ce i odzyskujace partycje. Pracuje z partycjami:
 
 %prep
 %setup -q -n %{name}
+%patch0 -p0
 
 %build
 cd src
-%{__make} linux_no_ext2fs \
+%{__make} linux \
 	CC=%{__cc} \
 	CFLAGS="-I%{_includedir}/ncurses"
 
