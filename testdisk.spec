@@ -1,7 +1,7 @@
 Summary:	Tool to check and undelete partition
 Summary(pl):	Narzêdzie sprawdzaj±ce i odzyskuj±ce partycje
 Name:		testdisk
-Version:	4.0
+Version:	4.1
 Release:	1
 License:	GPL
 Group:		Applications/System
@@ -44,12 +44,11 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_sbindir}
 
 install src/testdisk	$RPM_BUILD_ROOT%{_sbindir}/
-gzip -9nf [L-T]*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc [L-T]* doc/*.html doc/*.gif
 %attr(755,root,root) %{_sbindir}/testdisk
