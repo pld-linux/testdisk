@@ -6,6 +6,7 @@ Release:	2
 License:	GPL
 Group:		Applications/System
 Source0:	http://www.cgsecurity.org/%{name}-%{version}.tgz
+# Source0-md5:	124e17485056354624380d3cf6a1f1cb
 Patch0:		%{name}-LIBEXT.patch
 URL:		http://www.cgsecurity.org/testdisk.html
 BuildRequires:	e2fsprogs-devel
