@@ -1,12 +1,12 @@
 Summary:	Tool to check and undelete partition
 Summary(pl):	Narzêdzie sprawdzaj±ce i odzyskuj±ce partycje
 Name:		testdisk
-Version:	4.4
-Release:	2
+Version:	4.5
+Release:	1
 License:	GPL
 Group:		Applications/System
-Source0:	http://www.cgsecurity.org/%{name}-%{version}.tgz
-# Source0-md5:	124e17485056354624380d3cf6a1f1cb
+Source0:	http://www.cgsecurity.org/%{name}-%{version}.tar.gz
+# Source0-md5:	6f2687efb3657f6ae797cdc04ff8b7fc
 Patch0:		%{name}-LIBEXT.patch
 URL:		http://www.cgsecurity.org/testdisk.html
 BuildRequires:	e2fsprogs-devel

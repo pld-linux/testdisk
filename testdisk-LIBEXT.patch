@@ -1,7 +1,8 @@
-diff -Nur testdisk.org/src/Makefile testdisk/src/Makefile
---- testdisk.org/src/Makefile	Sun Nov 24 20:35:23 2002
-+++ testdisk/src/Makefile	Fri Nov 29 09:47:14 2002
-@@ -8,7 +8,7 @@
+--- testdisk/src/Makefile.orig	2003-09-24 18:58:44.000000000 +0000
++++ testdisk/src/Makefile	2003-10-06 17:04:50.000000000 +0000
+@@ -6,9 +6,9 @@
+ REN=mv
+ UPX=upx
  # You can get UPX at http://upx.sourceforge.net/
 -LIBREISER=../progsreiserfs-0.3.1-rc7/libreiserfs/.libs/libreiserfs.a
 -INCREISER=../progsreiserfs-0.3.1-rc7/include
@@ -9,6 +10,6 @@ diff -Nur testdisk.org/src/Makefile testdisk/src/Makefile
 +LIBREISER=-lreiserfs
 +INCREISER=/usr/include
 +LIBEXT=-lext2fs
- CFLAGS=-Wall -MD -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wshadow -Wwrite-strings -W -Wcast-align -Waggregate-return -Wbad-function-cast -Wcast-qual -O2 -g -Wundef -Wredundant-decls -Wsign-compare -I.
+ CFLAGS=-Wall -MD -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wshadow -Wwrite-strings -W -Wcast-align -Waggregate-return -Wbad-function-cast -Wcast-qual -O2 -g -Wundef -Wredundant-decls -Wsign-compare -I.  -D_GNU_SOURCE -D_FILE_OFFSET_BITS=64
+ #-pg 
  #-Wunreachable-code -Wmissing-noreturn 
- #-Wconversion
