@@ -6,16 +6,7 @@ diff -Nur testdisk.org/src/Makefile testdisk/src/Makefile
  LIBREISER=../progsreiserfs-0.3.1-rc7/libreiserfs/.libs/libreiserfs.a
  INCREISER=../progsreiserfs-0.3.1-rc7/include
 -LIBEXT=../e2fsprogs-1.29/lib/ext2fs/libext2fs.a
-+LIBEXT=
++LIBEXT=-lext2fs
  CFLAGS=-Wall -MD -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wshadow -Wwrite-strings -W -Wcast-align -Waggregate-return -Wbad-function-cast -Wcast-qual -O2 -g -Wundef -Wredundant-decls -Wsign-compare -I.
  #-Wunreachable-code -Wmissing-noreturn 
  #-Wconversion
-@@ -47,7 +47,7 @@
- 
- linux:	$(LIBEXT) $(LIBREISER)
- #	$(MAKE) testdisk CFLAGS="$(CFLAGS) -DLINUX -DHAVE_REISERFS -pipe"  LDFLAGS="-lncurses $(LIBEXT) $(LIBREISER)"
--	$(MAKE) testdisk CFLAGS="$(CFLAGS) -DLINUX -DHAVE_REISERFS -pipe"  LDFLAGS="$(LIBEXT) $(LIBREISER) /usr/lib/libncurses.a"
-+	$(MAKE) testdisk CFLAGS="$(CFLAGS) -DLINUX -DHAVE_REISERFS -pipe"  LDFLAGS="$(LIBEXT) $(LIBREISER) -lext2fs -lncurses"
- 
- linuxstatic:
- 	$(MAKE) testdisk_static CFLAGS="$(CFLAGS) -DLINUX -DHAVE_REISERFS -pipe"  LDFLAGS="-lncurses $(LIBEXT) $(LIBREISER)"

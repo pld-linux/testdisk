@@ -4,7 +4,7 @@
 Summary:	Tool to check and undelete partition
 Summary(pl):	Narzêdzie sprawdzaj±ce i odzyskuj±ce partycje
 Name:		testdisk
-Version:	4.3
+Version:	4.4
 Release:	1
 License:	GPL
 Group:		Applications/System
