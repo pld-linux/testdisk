@@ -5,10 +5,6 @@ Version:	3.11
 Release:	1
 License:	GPL
 Group:		Applications/System
-Group(de):	Applikationen/System
-Group(es):	Aplicaciones/Sistema
-Group(pl):	Aplikacje/System
-Group(pt_BR):	Aplicações/Sistema
 Source0:	http://www.cgsecurity.org/%{name}-%{version}.tgz
 URL:		http://www.cgsecurity.org/testdisk.html
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
