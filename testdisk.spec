@@ -1,7 +1,7 @@
 Summary:	Tool to check and undelete partition
 Summary(pl):	Narzêdzie sprawdzaj±ce i odzyskuj±ce partycje
 Name:		testdisk
-Version:	3.11
+Version:	4.0
 Release:	1
 License:	GPL
 Group:		Applications/System
@@ -37,7 +37,7 @@ Narzêdzie sprawdzaj±ce i odzyskujace partycje. Pracuje z partycjami:
 
 %build
 cd src
-%{__make} linux CFLAGS="-I%{_includedir}/ncurses"
+%{__make} linux_no_ext2fs CFLAGS="-I%{_includedir}/ncurses"
 
 %install
 rm -rf $RPM_BUILD_ROOT
