@@ -1,5 +1,5 @@
 Summary:	Tool to check and undelete partition
-Summary(pl):	Narzedzie sprawdzajace i odzyskujace partycje
+Summary(pl):	Narzêdzie sprawdzaj±ce i odzyskuj±ce partycje
 Name:		testdisk
 Version:	3.11	
 Release:	1
@@ -26,7 +26,7 @@ partitions:
 - RaiserFS
 
 %description -l pl
-Narzedzie sprawdzajace i odzyskujace partycje Pracuje z partycjami:
+Narzêdzie sprawdzaj±ce i odzyskujace partycje. Pracuje z partycjami:
 - FAT12 FAT16 FAT32
 - Linux
 - Linux SWAP (version 1 and 2)
