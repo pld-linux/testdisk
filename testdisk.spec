@@ -1,7 +1,7 @@
 Summary:	Tool to check and undelete partition
 Summary(pl):	Narzêdzie sprawdzaj±ce i odzyskuj±ce partycje
 Name:		testdisk
-Version:	3.11	
+Version:	3.11
 Release:	1
 License:	GPL
 Group:		Applications/System
