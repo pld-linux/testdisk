@@ -1,12 +1,16 @@
+# TODO:
+# 	use progsreiserfs-devel instead Source1
+#
 Summary:	Tool to check and undelete partition
 Summary(pl):	Narzêdzie sprawdzaj±ce i odzyskuj±ce partycje
 Name:		testdisk
-Version:	4.1
-Release:	2
+Version:	4.3
+Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	http://www.cgsecurity.org/%{name}-%{version}.tgz
-Patch0:		%{name}-va_arg.patch
+Source1:	http://reiserfs.linux.kiev.ua/snapshots/progsreiserfs-0.3.1-rc7.tar.gz
+Patch0:		%{name}-LIBEXT.patch
 URL:		http://www.cgsecurity.org/testdisk.html
 BuildRequires:	e2fsprogs-devel
 BuildRequires:	ncurses-devel >= 5.2
@@ -36,10 +40,15 @@ Narzêdzie sprawdzaj±ce i odzyskujace partycje. Pracuje z partycjami:
 - ReiserFS
 
 %prep
-%setup -q -n %{name}
-%patch0 -p0
+%setup -q -n %{name} -a 1
+%patch0 -p1
 
 %build
+cd progsreiserfs-0.3.1-rc7
+./configure
+%{__make}
+cd ..
+
 cd src
 %{__make} linux \
 	CC=%{__cc} \
