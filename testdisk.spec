@@ -8,8 +8,8 @@ Group:		Applications/System
 Source0:	http://www.cgsecurity.org/%{name}-%{version}.tgz
 Patch0:		%{name}-va_arg.patch
 URL:		http://www.cgsecurity.org/testdisk.html
-BuildRequires:	ncurses-devel >= 5.2
 BuildRequires:	e2fsprogs-devel
+BuildRequires:	ncurses-devel >= 5.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -49,7 +49,7 @@ cd src
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_sbindir}
 
-install src/testdisk	$RPM_BUILD_ROOT%{_sbindir}/
+install src/testdisk $RPM_BUILD_ROOT%{_sbindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
