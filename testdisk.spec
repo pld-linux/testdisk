@@ -44,7 +44,7 @@ Narzêdzie sprawdzaj±ce i odzyskujace partycje. Pracuje z partycjami:
 cd src
 %{__make} linux \
 	CC=%{__cc} \
-	CFLAGS="-I%{_includedir}/ncurses"
+	CFLAGS="%{rpmcflags} -I%{_includedir}/ncurses"
 
 %install
 rm -rf $RPM_BUILD_ROOT

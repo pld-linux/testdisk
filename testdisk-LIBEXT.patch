@@ -3,9 +3,11 @@ diff -Nur testdisk.org/src/Makefile testdisk/src/Makefile
 +++ testdisk/src/Makefile	Fri Nov 29 09:47:14 2002
 @@ -8,7 +8,7 @@
  # You can get UPX at http://upx.sourceforge.net/
- LIBREISER=../progsreiserfs-0.3.1-rc7/libreiserfs/.libs/libreiserfs.a
- INCREISER=../progsreiserfs-0.3.1-rc7/include
+-LIBREISER=../progsreiserfs-0.3.1-rc7/libreiserfs/.libs/libreiserfs.a
+-INCREISER=../progsreiserfs-0.3.1-rc7/include
 -LIBEXT=../e2fsprogs-1.29/lib/ext2fs/libext2fs.a
++LIBREISER=-lreiserfs
++INCREISER=/usr/include
 +LIBEXT=-lext2fs
  CFLAGS=-Wall -MD -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wstrict-prototypes -Wshadow -Wwrite-strings -W -Wcast-align -Waggregate-return -Wbad-function-cast -Wcast-qual -O2 -g -Wundef -Wredundant-decls -Wsign-compare -I.
  #-Wunreachable-code -Wmissing-noreturn 
