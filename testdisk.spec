@@ -2,11 +2,11 @@ Summary:	Tool to check and undelete partition
 Summary(pl):	Narzêdzie sprawdzaj±ce i odzyskuj±ce partycje
 Name:		testdisk
 Version:	5.4
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/System
-Source0:	http://www.cgsecurity.org/%{name}-%{version}-WIP.tar.gz
-# Source0-md5:	c6a2b1d204a8fb752a627ec1c7a9e4b9
+Source0:	http://www.cgsecurity.org/%{name}-%{version}.tar.gz
+# Source0-md5:	23ad8e98e9031a473fd5e9da0b09191e
 Patch0:		%{name}-ncurses.patch
 Patch1:		%{name}-ntfs.patch
 URL:		http://www.cgsecurity.org/testdisk.html
@@ -42,7 +42,7 @@ Narzêdzie sprawdzaj±ce i odzyskuj±ce partycje. Pracuje z partycjami:
 - ReiserFS
 
 %prep
-%setup -q -n testdisk-5.4-WIP
+%setup -q -n testdisk-5.4
 %patch0 -p1
 %patch1 -p1
 
