@@ -1,15 +1,17 @@
 Summary:	Tool to check and undelete partition
 Summary(pl):	Narzêdzie sprawdzaj±ce i odzyskuj±ce partycje
 Name:		testdisk
-Version:	5.1
+Version:	5.2
 Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	http://www.cgsecurity.org/%{name}-%{version}.tar.gz
-# Source0-md5:	c86eb08730a52a113ae572de75ff9c9e
-Patch0:		%{name}-LIBEXT.patch
+# Source0-md5:	f31ee06d2040e1d610a5891b57a86f65
+Patch0:		%{name}-ncurses.patch
 Patch1:		%{name}-va.patch
 URL:		http://www.cgsecurity.org/testdisk.html
+BuildRequires:  autoconf
+BuildRequires:  automake
 BuildRequires:	e2fsprogs-devel
 BuildRequires:	ncurses-devel >= 5.2
 BuildRequires:	ntfsprogs-devel >= 1.8.5 
@@ -40,14 +42,19 @@ Narzêdzie sprawdzaj±ce i odzyskujace partycje. Pracuje z partycjami:
 - ReiserFS
 
 %prep
-%setup -q -n %{name}
+%setup -q
 %patch0 -p1
-%patch1 -p1
+#%patch1 -p1
 
 %build
-%{__make} -C src linux \
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
+%configure
+%{__make} \
 	CC=%{__cc} \
-	CFLAGS="%{rpmcflags} -I%{_includedir}/ncurses"
+	CFLAGS="%{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -60,5 +67,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README TODO doc/*.html doc/*.gif
+%doc AUTHORS ChangeLog INFO NEWS README THANKS doc/*.html doc/*.gif
 %attr(755,root,root) %{_sbindir}/testdisk
