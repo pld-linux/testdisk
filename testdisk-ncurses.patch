@@ -11,18 +11,6 @@
  #include <ncurses.h>
  #else
  #ifdef HAVE_CURSES_H
---- testdisk-5.4-WIP/src/common.h.orig	2004-08-25 13:19:39.000000000 +0200
-+++ testdisk-5.4-WIP/src/common.h	2004-08-27 22:52:15.505520080 +0200
-@@ -19,6 +19,9 @@
-     Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
- 
-  */
-+
-+#include "types.h"
-+
- #define DEFAULT_SECTOR_SIZE     0x200
- 
- #define MAX_CYLINDERS 65535
 --- testdisk-5.4-WIP/configure.ac.orig	2004-08-25 19:12:59.000000000 +0200
 +++ testdisk-5.4-WIP/configure.ac	2004-08-27 22:52:53.475747728 +0200
 @@ -143,7 +143,7 @@
