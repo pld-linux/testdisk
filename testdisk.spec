@@ -23,7 +23,7 @@ partitions:
 - BeFS (BeOS)
 - UFS (BSD)
 - Netware
-- RaiserFS
+- ReiserFS
 
 %description -l pl
 Narzêdzie sprawdzaj±ce i odzyskujace partycje. Pracuje z partycjami:
@@ -34,7 +34,7 @@ Narzêdzie sprawdzaj±ce i odzyskujace partycje. Pracuje z partycjami:
 - BeFS (BeOS)
 - UFS (BSD)
 - Netware
-- RaiserFS
+- ReiserFS
 
 %prep
 %setup -q -n %{name}
