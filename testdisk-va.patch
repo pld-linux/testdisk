@@ -1,0 +1,19 @@
+--- testdisk/src/intrface.c.orig	2003-10-01 19:39:41.000000000 +0000
++++ testdisk/src/intrface.c	2003-12-27 21:46:58.000000000 +0000
+@@ -1382,7 +1382,7 @@
+ 		int menu;
+ 		int pos=0;
+ 		int done=0;
+-		WINDOW *window=*(WINDOW**)ap;
++		WINDOW *window;
+ 		struct MenuItem menuBuffer[]=
+ 		{
+ 		  { 'P', "Previous",""},
+@@ -1397,6 +1397,7 @@
+ 		  { 0, NULL, NULL }
+ 		};
+ 		char options[20];
++		window=va_arg(ap, WINDOW*);
+ 		if(nbr_lines<=DUMP_MAX_LINES)
+ 		{
+ 		  strcpy(options,"Q");
