@@ -1,0 +1,25 @@
+diff -Nur testdisk-5.2.org/src/common.h testdisk-5.2/src/common.h
+--- testdisk-5.2.org/src/common.h	2004-03-11 07:30:54.000000000 +0000
++++ testdisk-5.2/src/common.h	2004-03-17 11:19:26.000000000 +0000
+@@ -19,6 +19,9 @@
+     Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ 
+  */
++ 
++#include <ncurses/ncurses.h>
++
+ #define SECTOR_SIZE     0x200
+ 
+ #define MAX_CYLINDERS 65535
+diff -Nur testdisk-5.2.org/src/types.h testdisk-5.2/src/types.h
+--- testdisk-5.2.org/src/types.h	2004-02-28 14:28:30.000000000 +0000
++++ testdisk-5.2/src/types.h	2004-03-17 11:18:57.000000000 +0000
+@@ -22,9 +22,9 @@
+ #ifndef _TESTDISK_TYPES_H
+ #define _TESTDISK_TYPES_H
+ 
+-#include <sys/types.h>
++#include <linux/types.h>
+ #ifdef HAVE_NCURSES_H
+ #include <ncurses.h>
+ #else
