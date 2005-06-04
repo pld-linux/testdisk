@@ -1,12 +1,12 @@
 Summary:	Tool to check and undelete partition
 Summary(pl):	Narzêdzie sprawdzaj±ce i odzyskuj±ce partycje
 Name:		testdisk
-Version:	5.7
+Version:	5.8
 Release:	1
 License:	GPL
 Group:		Applications/System
 Source0:	http://www.cgsecurity.org/%{name}-%{version}.tar.gz
-# Source0-md5:	86b5472fcbf4a1f1aa36aefec4e5f4ac
+# Source0-md5:	629e035e0ded72388df30f3c743d7a83
 URL:		http://www.cgsecurity.org/testdisk.html
 BuildRequires:	autoconf
 BuildRequires:	automake
