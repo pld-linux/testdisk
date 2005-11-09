@@ -17,7 +17,7 @@ BuildRequires:	progsreiserfs-devel >= 0.3.1-1.rc8.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Tool to check and undelete partition Works with the following
+Tool to check and undelete partition. Works with the following
 partitions:
 - FAT12 FAT16 FAT32
 - Linux
