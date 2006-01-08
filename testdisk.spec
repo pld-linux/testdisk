@@ -11,6 +11,7 @@ URL:		http://www.cgsecurity.org/testdisk.html
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	e2fsprogs-devel
+BuildRequires:	libjpeg-devel
 BuildRequires:	ncurses-devel >= 5.2
 BuildRequires:	ntfsprogs-devel >= 1.9.4 
 BuildRequires:	progsreiserfs-devel >= 0.3.1-1.rc8.1
