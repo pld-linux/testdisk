@@ -1,12 +1,12 @@
 Summary:	Tool to check and undelete partition
 Summary(pl):	Narzêdzie sprawdzaj±ce i odzyskuj±ce partycje
 Name:		testdisk
-Version:	6.2
-Release:	0.1
+Version:	6.3
+Release:	1
 License:	GPL
 Group:		Applications/System
-Source0:	http://www.cgsecurity.org/%{name}-%{version}-WIP.tar.bz2
-# Source0-md5:	0f0f93b9155e3c8e6b79d2efb4498312
+Source0:	http://www.cgsecurity.org/%{name}-%{version}.tar.bz2
+# Source0-md5:	e099bd9bb87d4da5712699bdea3da00f
 URL:		http://www.cgsecurity.org/testdisk.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -41,7 +41,7 @@ Narzêdzie sprawdzaj±ce i odzyskuj±ce partycje. Pracuje z partycjami:
 - ReiserFS
 
 %prep
-%setup -q -n %{name}-%{version}-WIP
+%setup -q
 
 %build
 %{__aclocal}
