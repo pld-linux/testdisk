@@ -3,12 +3,12 @@ Summary(fr):	Outil pour vérifier et restorer des partitions
 Summary(pl):	Narzêdzie sprawdzaj±ce i odzyskuj±ce partycje
 Summary(ru):	ğÒÏÇÒÁÍÍÁ ÄÌÑ ĞÒÏ×ÅÒËÉ É ×ÏÓÓÔÁÎÏ×ÌÅÎÉÑ ÒÁÚÄÅÌÏ× ÄÉÓËÁ
 Name:		testdisk
-Version:	6.5
-Release:	1
+Version:	6.6
+Release:	0.1
 License:	GPL v2
 Group:		Applications/System
-Source0:	http://www.cgsecurity.org/%{name}-%{version}.tar.bz2
-# Source0-md5:	58cb6ebd95d524775720646a7bb79354
+Source0:	http://www.cgsecurity.org/%{name}-%{version}-WIP.tar.bz2
+# Source0-md5:	cc721a1551c109dacb2a66ec6647fe83
 URL:		http://www.cgsecurity.org/testdisk.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -95,7 +95,7 @@ Narzêdzie sprawdzaj±ce i odzyskuj±ce partycje. Pracuje z partycjami:
 - XFS
 
 %prep
-%setup -q
+%setup -q -n %{name}-%{version}-WIP
 
 %build
 %{__aclocal}
