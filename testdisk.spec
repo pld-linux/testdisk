@@ -1,7 +1,7 @@
 Summary:	Tool to check and undelete partition
-Summary(fr):	Outil pour vИrifier et restorer des partitions
-Summary(pl):	NarzЙdzie sprawdzaj╠ce i odzyskuj╠ce partycje
-Summary(ru):	Программа для проверки и восстановления разделов диска
+Summary(fr.UTF-8):   Outil pour vц╘rifier et restorer des partitions
+Summary(pl.UTF-8):   Narzд≥dzie sprawdzajд┘ce i odzyskujд┘ce partycje
+Summary(ru.UTF-8):   п÷я─п╬пЁя─п╟п╪п╪п╟ п╢п╩я▐ п©я─п╬п╡п╣я─п╨п╦ п╦ п╡п╬я│я│я┌п╟п╫п╬п╡п╩п╣п╫п╦я▐ я─п╟п╥п╢п╣п╩п╬п╡ п╢п╦я│п╨п╟
 Name:		testdisk
 Version:	6.6
 Release:	0.1
@@ -38,8 +38,8 @@ partitions:
 - UFS (Sun/BSD)
 - XFS
 
-%description -l fr
-Outil pour vИrifier et restorer des partitions. Fonctionne avec les
+%description -l fr.UTF-8
+Outil pour vц╘rifier et restorer des partitions. Fonctionne avec les
 partitions suivantes:
 - FAT12 FAT16 FAT32
 - Linux Ext2, Ext3
@@ -57,8 +57,8 @@ partitions suivantes:
 - UFS (Sun/BSD)
 - XFS
 
-%description -l pl
-NarzЙdzie sprawdzaj╠ce i odzyskuj╠ce partycje. Pracuje z partycjami:
+%description -l pl.UTF-8
+Narzд≥dzie sprawdzajд┘ce i odzyskujд┘ce partycje. Pracuje z partycjami:
 - FAT12 FAT16 FAT32
 - Linux Ext2, Ext3
 - Linux SWAP (version 1 and 2)
@@ -75,9 +75,9 @@ NarzЙdzie sprawdzaj╠ce i odzyskuj╠ce partycje. Pracuje z partycjami:
 - UFS (Sun/BSD)
 - XFS
 
-%description -l ru
-Программа для проверки и восстановления разделов диска. Поддерживает
-следующие типы разделов:
+%description -l ru.UTF-8
+п÷я─п╬пЁя─п╟п╪п╪п╟ п╢п╩я▐ п©я─п╬п╡п╣я─п╨п╦ п╦ п╡п╬я│я│я┌п╟п╫п╬п╡п╩п╣п╫п╦я▐ я─п╟п╥п╢п╣п╩п╬п╡ п╢п╦я│п╨п╟. п÷п╬п╢п╢п╣я─п╤п╦п╡п╟п╣я┌
+я│п╩п╣п╢я┐я▌я┴п╦п╣ я┌п╦п©я▀ я─п╟п╥п╢п╣п╩п╬п╡:
 - FAT12 FAT16 FAT32
 - Linux Ext2, Ext3
 - Linux SWAP (version 1 and 2)
