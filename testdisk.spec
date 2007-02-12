@@ -1,7 +1,7 @@
 Summary:	Tool to check and undelete partition
-Summary(fr.UTF-8):   Outil pour vérifier et restorer des partitions
-Summary(pl.UTF-8):   Narzędzie sprawdzające i odzyskujące partycje
-Summary(ru.UTF-8):   Программа для проверки и восстановления разделов диска
+Summary(fr.UTF-8):	Outil pour vérifier et restorer des partitions
+Summary(pl.UTF-8):	Narzędzie sprawdzające i odzyskujące partycje
+Summary(ru.UTF-8):	Программа для проверки и восстановления разделов диска
 Name:		testdisk
 Version:	6.6
 Release:	0.1
