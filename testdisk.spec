@@ -4,11 +4,11 @@ Summary(pl.UTF-8):	Narzędzie sprawdzające i odzyskujące partycje
 Summary(ru.UTF-8):	Программа для проверки и восстановления разделов диска
 Name:		testdisk
 Version:	6.9
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Applications/System
-Source0:	http://www.cgsecurity.org/%{name}-%{version}-WIP.tar.bz2
-# Source0-md5:	9d84a09a3cd73460032d2b9e183af10b
+Source0:	http://www.cgsecurity.org/%{name}-%{version}.tar.bz2
+# Source0-md5:	8933cea0593bd02c05c79e1e3a23a0a4
 URL:		http://www.cgsecurity.org/testdisk.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -95,7 +95,7 @@ Narzędzie sprawdzające i odzyskujące partycje. Pracuje z partycjami:
 - XFS
 
 %prep
-%setup -q -n %{name}-%{version}-WIP
+%setup -q
 
 %build
 %{__aclocal}
