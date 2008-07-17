@@ -9,8 +9,9 @@ License:	GPL v2
 Group:		Applications/System
 Source0:	http://www.cgsecurity.org/%{name}-%{version}.tar.bz2
 # Source0-md5:	d3bde0b546d40e029dda4e9861db40ef
+Patch0:		%{name}-ac.patch
 URL:		http://www.cgsecurity.org/testdisk.html
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
 BuildRequires:	e2fsprogs-devel
 BuildRequires:	libjpeg-devel
@@ -96,6 +97,7 @@ Narzędzie sprawdzające i odzyskujące partycje. Pracuje z partycjami:
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__aclocal}
