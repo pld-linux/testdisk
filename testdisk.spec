@@ -3,16 +3,18 @@ Summary(fr.UTF-8):	Outil pour vérifier et restorer des partitions
 Summary(pl.UTF-8):	Narzędzie sprawdzające i odzyskujące partycje
 Summary(ru.UTF-8):	Программа для проверки и восстановления разделов диска
 Name:		testdisk
-Version:	6.10
-Release:	1
+Version:	6.11
+Release:	0.1
 License:	GPL v2+
 Group:		Applications/System
 Source0:	http://www.cgsecurity.org/%{name}-%{version}-WIP.tar.bz2
-# Source0-md5:	ced021f203819bcfe63cde8084cbee3f
+# Source0-md5:	46a0efd231ea4f74c19a713860863973
+Patch0:		%{name}-ac.patch
 URL:		http://www.cgsecurity.org/testdisk.html
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
 BuildRequires:	e2fsprogs-devel
+BuildRequires:	libewf-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	ncurses-devel >= 5.2
 BuildRequires:	ntfsprogs-devel >= 1.13.1
@@ -22,80 +24,85 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Tool to check and undelete partition. Works with the following
 partitions:
-- FAT12 FAT16 FAT32
+- DOS/Windows FAT12, FAT16, FAT32
 - Linux Ext2, Ext3
-- Linux SWAP (version 1 and 2)
-- Linux Raid
+- Linux Swap (version 1 and 2)
+- Linux RAID
 - LVM and LVM2, Linux Logical Volume Manager
 - BeFS (BeOS)
 - BSD disklabel (FreeBSD/OpenBSD/NetBSD)
 - CramFS (Compressed File System)
-- HFS, Hierarchical File System
+- HFS and HFS+, Hierarchical File System
 - JFS, IBM's Journaled File System
 - Netware NSS
 - NTFS (Windows NT/2k/XP)
-- ReiserFS 3.5, 3.6
-- UFS (Sun/BSD)
-- XFS
+- ReiserFS 3.5, 3.6, 4
+- Sun Solaris i386 disklabel
+- UFS, UFS2 (Sun/BSD/...)
+- XFS, SGI's Journaled File System
 
 %description -l fr.UTF-8
 Outil pour vérifier et restorer des partitions. Fonctionne avec les
 partitions suivantes:
-- FAT12 FAT16 FAT32
+- DOS/Windows FAT12, FAT16, FAT32
 - Linux Ext2, Ext3
-- Linux SWAP (version 1 and 2)
-- Linux Raid
-- LVM and LVM2, Linux Logical Volume Manager
+- Linux Swap (version 1 and 2)
+- Linux RAID
+- LVM/LVM2, Linux Logical Volume Manager
 - BeFS (BeOS)
 - BSD disklabel (FreeBSD/OpenBSD/NetBSD)
 - CramFS (Compressed File System)
-- HFS, Hierarchical File System
+- HFS/HFS+, Hierarchical File System
 - JFS, IBM's Journaled File System
 - Netware NSS
 - NTFS (Windows NT/2k/XP)
-- ReiserFS 3.5, 3.6
-- UFS (Sun/BSD)
-- XFS
+- ReiserFS 3.5, 3.6, 4
+- Sun Solaris i386 disklabel
+- UFS, UFS2 (Sun/BSD/...)
+- XFS, SGI's Journaled File System
 
 %description -l pl.UTF-8
 Narzędzie sprawdzające i odzyskujące partycje. Pracuje z partycjami:
-- FAT12 FAT16 FAT32
+- DOS/Windows FAT12, FAT16, FAT32
 - Linux Ext2, Ext3
-- Linux SWAP (version 1 and 2)
-- Linux Raid
-- LVM and LVM2, Linux Logical Volume Manager
+- Linux Swap (version 1 and 2)
+- Linux RAID
+- LVM i LVM2 - Linux Logical Volume Manager
 - BeFS (BeOS)
 - BSD disklabel (FreeBSD/OpenBSD/NetBSD)
 - CramFS (Compressed File System)
-- HFS, Hierarchical File System
-- JFS, IBM's Journaled File System
+- HFS i HFS+ - Hierarchical File System
+- JFS - IBM's Journaled File System
 - Netware NSS
 - NTFS (Windows NT/2k/XP)
-- ReiserFS 3.5, 3.6
-- UFS (Sun/BSD)
-- XFS
+- ReiserFS 3.5, 3.6, 4
+- Sun Solaris i386 disklabel
+- UFS, UFS2 (Sun/BSD/...)
+- XFS - SGI's Journaled File System
 
 %description -l ru.UTF-8
 Программа для проверки и восстановления разделов диска. Поддерживает
 следующие типы разделов:
-- FAT12 FAT16 FAT32
+- DOS/Windows FAT12, FAT16, FAT32
 - Linux Ext2, Ext3
-- Linux SWAP (version 1 and 2)
-- Linux Raid
-- LVM and LVM2, Linux Logical Volume Manager
+- Linux Swap (version 1 and 2)
+- Linux RAID
+- LVM/LVM2, Linux Logical Volume Manager
 - BeFS (BeOS)
 - BSD disklabel (FreeBSD/OpenBSD/NetBSD)
 - CramFS (Compressed File System)
-- HFS, Hierarchical File System
+- HFS/HFS+, Hierarchical File System
 - JFS, IBM's Journaled File System
 - Netware NSS
 - NTFS (Windows NT/2k/XP)
-- ReiserFS 3.5, 3.6
-- UFS (Sun/BSD)
-- XFS
+- ReiserFS 3.5, 3.6, 4
+- Sun Solaris i386 disklabel
+- UFS, UFS2 (Sun/BSD/...)
+- XFS - SGI's Journaled File System
 
 %prep
 %setup -q -n %{name}-%{version}-WIP
+%patch0 -p1
 
 %build
 %{__aclocal}
