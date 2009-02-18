@@ -4,7 +4,7 @@ Summary(pl.UTF-8):	Narzędzie sprawdzające i odzyskujące partycje
 Summary(ru.UTF-8):	Программа для проверки и восстановления разделов диска
 Name:		testdisk
 Version:	6.10
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://www.cgsecurity.org/%{name}-%{version}.tar.bz2
