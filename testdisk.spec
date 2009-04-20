@@ -24,81 +24,81 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Tool to check and undelete partition. Works with the following
 partitions:
-- DOS/Windows FAT12, FAT16, FAT32
-- Linux Ext2, Ext3
-- Linux Swap (version 1 and 2)
-- Linux RAID
-- LVM and LVM2, Linux Logical Volume Manager
-- BeFS (BeOS)
-- BSD disklabel (FreeBSD/OpenBSD/NetBSD)
+- DOS/Windows FAT12, FAT16 and FAT32
+- NTFS ( Windows NT/2K/XP )
+- Linux Ext2 and Ext3
+- BeFS ( BeOS )
+- BSD disklabel ( FreeBSD/OpenBSD/NetBSD )
 - CramFS (Compressed File System)
 - HFS and HFS+, Hierarchical File System
 - JFS, IBM's Journaled File System
+- Linux Raid
+- Linux Swap (versions 1 and 2)
+- LVM and LVM2, Linux Logical Volume Manager
 - Netware NSS
-- NTFS (Windows NT/2k/XP)
-- ReiserFS 3.5, 3.6, 4
+- ReiserFS 3.5, 3.6 and 4
 - Sun Solaris i386 disklabel
-- UFS, UFS2 (Sun/BSD/...)
+- UFS and UFS2 (Sun/BSD/...)
 - XFS, SGI's Journaled File System
 
 %description -l fr.UTF-8
 Outil pour vérifier et restorer des partitions. Fonctionne avec les
 partitions suivantes:
-- DOS/Windows FAT12, FAT16, FAT32
-- Linux Ext2, Ext3
-- Linux Swap (version 1 and 2)
-- Linux RAID
-- LVM/LVM2, Linux Logical Volume Manager
-- BeFS (BeOS)
-- BSD disklabel (FreeBSD/OpenBSD/NetBSD)
+- DOS/Windows FAT12, FAT16 and FAT32
+- NTFS ( Windows NT/2K/XP )
+- Linux Ext2 and Ext3
+- BeFS ( BeOS )
+- BSD disklabel ( FreeBSD/OpenBSD/NetBSD )
 - CramFS (Compressed File System)
-- HFS/HFS+, Hierarchical File System
+- HFS and HFS+, Hierarchical File System
 - JFS, IBM's Journaled File System
+- Linux Raid
+- Linux Swap (versions 1 and 2)
+- LVM and LVM2, Linux Logical Volume Manager
 - Netware NSS
-- NTFS (Windows NT/2k/XP)
-- ReiserFS 3.5, 3.6, 4
+- ReiserFS 3.5, 3.6 and 4
 - Sun Solaris i386 disklabel
-- UFS, UFS2 (Sun/BSD/...)
+- UFS and UFS2 (Sun/BSD/...)
 - XFS, SGI's Journaled File System
 
 %description -l pl.UTF-8
 Narzędzie sprawdzające i odzyskujące partycje. Pracuje z partycjami:
-- DOS/Windows FAT12, FAT16, FAT32
-- Linux Ext2, Ext3
-- Linux Swap (version 1 and 2)
-- Linux RAID
-- LVM i LVM2 - Linux Logical Volume Manager
-- BeFS (BeOS)
-- BSD disklabel (FreeBSD/OpenBSD/NetBSD)
+- DOS/Windows FAT12, FAT16 and FAT32
+- NTFS ( Windows NT/2K/XP )
+- Linux Ext2 and Ext3
+- BeFS ( BeOS )
+- BSD disklabel ( FreeBSD/OpenBSD/NetBSD )
 - CramFS (Compressed File System)
-- HFS i HFS+ - Hierarchical File System
-- JFS - IBM's Journaled File System
+- HFS and HFS+, Hierarchical File System
+- JFS, IBM's Journaled File System
+- Linux Raid
+- Linux Swap (versions 1 and 2)
+- LVM and LVM2, Linux Logical Volume Manager
 - Netware NSS
-- NTFS (Windows NT/2k/XP)
-- ReiserFS 3.5, 3.6, 4
+- ReiserFS 3.5, 3.6 and 4
 - Sun Solaris i386 disklabel
-- UFS, UFS2 (Sun/BSD/...)
-- XFS - SGI's Journaled File System
+- UFS and UFS2 (Sun/BSD/...)
+- XFS, SGI's Journaled File System
 
 %description -l ru.UTF-8
 Программа для проверки и восстановления разделов диска. Поддерживает
 следующие типы разделов:
-- DOS/Windows FAT12, FAT16, FAT32
-- Linux Ext2, Ext3
-- Linux Swap (version 1 and 2)
-- Linux RAID
-- LVM/LVM2, Linux Logical Volume Manager
-- BeFS (BeOS)
-- BSD disklabel (FreeBSD/OpenBSD/NetBSD)
+- DOS/Windows FAT12, FAT16 and FAT32
+- NTFS ( Windows NT/2K/XP )
+- Linux Ext2 and Ext3
+- BeFS ( BeOS )
+- BSD disklabel ( FreeBSD/OpenBSD/NetBSD )
 - CramFS (Compressed File System)
-- HFS/HFS+, Hierarchical File System
+- HFS and HFS+, Hierarchical File System
 - JFS, IBM's Journaled File System
+- Linux Raid
+- Linux Swap (versions 1 and 2)
+- LVM and LVM2, Linux Logical Volume Manager
 - Netware NSS
-- NTFS (Windows NT/2k/XP)
-- ReiserFS 3.5, 3.6, 4
+- ReiserFS 3.5, 3.6 and 4
 - Sun Solaris i386 disklabel
-- UFS, UFS2 (Sun/BSD/...)
-- XFS - SGI's Journaled File System
+- UFS and UFS2 (Sun/BSD/...)
+- XFS, SGI's Journaled File System
 
 %prep
 %setup -q
