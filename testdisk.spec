@@ -4,12 +4,13 @@ Summary(pl.UTF-8):	Narzędzie sprawdzające i odzyskujące partycje
 Summary(ru.UTF-8):	Программа для проверки и восстановления разделов диска
 Name:		testdisk
 Version:	6.11
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://www.cgsecurity.org/%{name}-%{version}.tar.bz2
 # Source0-md5:	11f8fe95dcd190b69b782efa65b29ba1
 Patch0:		%{name}-ac.patch
+Patch1:		%{name}-photorec_611_exif_bound_checking.patch
 URL:		http://www.cgsecurity.org/testdisk.html
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
@@ -127,6 +128,7 @@ Narzędzie sprawdzające i odzyskujące partycje. Pracuje z partycjami:
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__aclocal}
