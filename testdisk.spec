@@ -18,6 +18,7 @@ BuildRequires:	libewf-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	ncurses-devel >= 5.2
 BuildRequires:	ntfsprogs-devel >= 1.13.1
+BuildRequires:	pkgconfig
 BuildRequires:	progsreiserfs-devel >= 0.3.1-1.rc8.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
