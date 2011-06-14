@@ -146,7 +146,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man8}
 
 install src/{fidentify,photorec,testdisk} $RPM_BUILD_ROOT%{_sbindir}
-install doc_src/*.8 $RPM_BUILD_ROOT%{_mandir}/man8
+install -p doc_src/*.8 $RPM_BUILD_ROOT%{_mandir}/man8
 
 %clean
 rm -rf $RPM_BUILD_ROOT
