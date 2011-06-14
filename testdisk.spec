@@ -3,21 +3,23 @@ Summary(fr.UTF-8):	Outil pour vérifier et restorer des partitions
 Summary(pl.UTF-8):	Narzędzie sprawdzające i odzyskujące partycje
 Summary(ru.UTF-8):	Программа для проверки и восстановления разделов диска
 Name:		testdisk
-Version:	6.11.3
-Release:	3
+Version:	6.12
+Release:	1
 License:	GPL v2+
 Group:		Applications/System
 Source0:	http://www.cgsecurity.org/%{name}-%{version}.tar.bz2
-# Source0-md5:	ceee384a8613d8f7ffff5ccfa3fba510
+# Source0-md5:	6ef653301f309156f3a802233a3139c1
 Patch0:		%{name}-ac.patch
 URL:		http://www.cgsecurity.org/testdisk.html
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
 BuildRequires:	e2fsprogs-devel
+#BuildRequires:	libcarvpath-devel
 BuildRequires:	libewf-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	ncurses-devel >= 5.2
 BuildRequires:	ntfsprogs-devel >= 1.13.1
+BuildRequires:	openssl-devel
 BuildRequires:	pkgconfig
 BuildRequires:	progsreiserfs-devel >= 0.3.1-1.rc8.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -141,17 +143,16 @@ Narzędzie sprawdzające i odzyskujące partycje. Pracuje z partycjami:
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man1}
+install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man8}
 
-install src/testdisk $RPM_BUILD_ROOT%{_sbindir}
-install src/photorec $RPM_BUILD_ROOT%{_sbindir}
-install doc_src/*.1 $RPM_BUILD_ROOT%{_mandir}/man1
+install src/{fidentify,photorec,testdisk} $RPM_BUILD_ROOT%{_sbindir}
+install doc_src/*.8 $RPM_BUILD_ROOT%{_mandir}/man8
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog INFO NEWS README THANKS doc/*.html doc/*.gif
-%{_mandir}/man1/*.1*
+%doc AUTHORS ChangeLog INFO NEWS README THANKS doc/*.html
+%{_mandir}/man8/*.8*
 %attr(755,root,root) %{_sbindir}/*
