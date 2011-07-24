@@ -4,7 +4,7 @@ Summary(pl.UTF-8):	Narzędzie sprawdzające i odzyskujące partycje
 Summary(ru.UTF-8):	Программа для проверки и восстановления разделов диска
 Name:		testdisk
 Version:	6.12
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Applications/System
 Source0:	http://www.cgsecurity.org/%{name}-%{version}.tar.bz2
@@ -18,7 +18,7 @@ BuildRequires:	e2fsprogs-devel
 BuildRequires:	libewf-devel
 BuildRequires:	libjpeg-devel
 BuildRequires:	ncurses-devel >= 5.2
-BuildRequires:	ntfsprogs-devel >= 1.13.1
+BuildRequires:	ntfs-3g-devel
 BuildRequires:	openssl-devel
 BuildRequires:	pkgconfig
 BuildRequires:	progsreiserfs-devel >= 0.3.1-1.rc8.1
