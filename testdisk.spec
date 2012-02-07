@@ -3,12 +3,12 @@ Summary(fr.UTF-8):	Outil pour vérifier et restorer des partitions
 Summary(pl.UTF-8):	Narzędzie sprawdzające i odzyskujące partycje
 Summary(ru.UTF-8):	Программа для проверки и восстановления разделов диска
 Name:		testdisk
-Version:	6.12
-Release:	4
+Version:	6.13
+Release:	1
 License:	GPL v2+
 Group:		Applications/System
 Source0:	http://www.cgsecurity.org/%{name}-%{version}.tar.bz2
-# Source0-md5:	6ef653301f309156f3a802233a3139c1
+# Source0-md5:	3bcbf0722d3823ca155e633969ce9f0b
 Patch0:		%{name}-ac.patch
 URL:		http://www.cgsecurity.org/testdisk.html
 BuildRequires:	autoconf >= 2.59
