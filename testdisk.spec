@@ -14,14 +14,17 @@ URL:		http://www.cgsecurity.org/wiki/TestDisk
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
 BuildRequires:	e2fsprogs-devel
+BuildRequires:	libcom_err-devel
 #BuildRequires:	libcarvpath-devel
 BuildRequires:	libewf-devel
 BuildRequires:	libjpeg-devel
+BuildRequires:	libuuid-devel
 BuildRequires:	ncurses-devel >= 5.2
 BuildRequires:	ntfs-3g-devel
 BuildRequires:	openssl-devel
 BuildRequires:	pkgconfig
 BuildRequires:	progsreiserfs-devel >= 0.3.1-1.rc8.1
+BuildRequires:	zlib-devel
 Requires:	uname(release) >= 2.6.18
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
