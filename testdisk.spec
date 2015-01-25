@@ -1,16 +1,21 @@
+#
+# Conditional build:
+%bcond_without	qt	# Qt4 qphotorec application
+#
 Summary:	Tool to check and undelete partition
 Summary(fr.UTF-8):	Outil pour vérifier et restorer des partitions
 Summary(pl.UTF-8):	Narzędzie sprawdzające i odzyskujące partycje
 Summary(ru.UTF-8):	Программа для проверки и восстановления разделов диска
 Name:		testdisk
 Version:	6.14
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Applications/System
 Source0:	http://www.cgsecurity.org/%{name}-%{version}.tar.bz2
 # Source0-md5:	b1f0edabc9035e9ec9c8e0a95059ff3f
 Patch0:		%{name}-ac.patch
 URL:		http://www.cgsecurity.org/wiki/TestDisk
+%{?with_qt:BuildRequires:	QtGui-devel >= 4}
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
 BuildRequires:	e2fsprogs-devel
@@ -18,12 +23,14 @@ BuildRequires:	libcom_err-devel
 #BuildRequires:	libcarvpath-devel
 BuildRequires:	libewf-devel
 BuildRequires:	libjpeg-devel
+%{?with_qt:BuildRequires:	libstdc++-devel}
 BuildRequires:	libuuid-devel
 BuildRequires:	ncurses-devel >= 5.2
 BuildRequires:	ntfs-3g-devel
 BuildRequires:	openssl-devel
 BuildRequires:	pkgconfig
 BuildRequires:	progsreiserfs-devel >= 0.3.1-1.rc8.1
+%{?with_qt:BuildRequires:	qt4-build >= 4}
 BuildRequires:	zlib-devel
 Requires:	uname(release) >= 2.6.18
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -131,6 +138,18 @@ Narzędzie sprawdzające i odzyskujące partycje. Pracuje z partycjami:
 - Unix File System UFS and UFS2 (Sun/BSD/...)
 - XFS, SGI's Journaled File System
 
+%package gui
+Summary:	QPhotoRec graphical user interface
+Summary(pl.UTF-8):	Graficzny interfejs użytkownika QPhotoRec
+Group:		X11/Applications
+Requires:	%{name} = %{version}-%{release}
+
+%description gui
+QPhotoRec graphical user interface.
+
+%description gui -l pl.UTF-8
+Graficzny interfejs użytkownika QPhotoRec.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -140,17 +159,19 @@ Narzędzie sprawdzające i odzyskujące partycje. Pracuje z partycjami:
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
-%{__make} \
-	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags}"
+%configure \
+	--bindir=%{_sbindir} \
+	%{?with_qt:--enable-qt}
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_sbindir},%{_mandir}/man8}
 
-install -p src/{fidentify,photorec,testdisk} $RPM_BUILD_ROOT%{_sbindir}
-cp -p doc_src/*.8 $RPM_BUILD_ROOT%{_mandir}/man8
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
+# packaged as %doc
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -164,3 +185,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man8/fidentify.8*
 %{_mandir}/man8/photorec.8*
 %{_mandir}/man8/testdisk.8*
+
+%if %{with qt}
+%files gui
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_sbindir}/qphotorec
+%endif
