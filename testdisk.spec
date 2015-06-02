@@ -7,20 +7,20 @@ Summary(fr.UTF-8):	Outil pour vérifier et restorer des partitions
 Summary(pl.UTF-8):	Narzędzie sprawdzające i odzyskujące partycje
 Summary(ru.UTF-8):	Программа для проверки и восстановления разделов диска
 Name:		testdisk
-Version:	6.14
-Release:	2
+Version:	7.0
+Release:	1
 License:	GPL v2+
 Group:		Applications/System
 Source0:	http://www.cgsecurity.org/%{name}-%{version}.tar.bz2
-# Source0-md5:	b1f0edabc9035e9ec9c8e0a95059ff3f
+# Source0-md5:	f0cfe4ca9dd35f2878b2704251665e9f
 Patch0:		%{name}-ac.patch
 URL:		http://www.cgsecurity.org/wiki/TestDisk
 %{?with_qt:BuildRequires:	QtGui-devel >= 4}
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
 BuildRequires:	e2fsprogs-devel
-BuildRequires:	libcom_err-devel
 #BuildRequires:	libcarvpath-devel
+BuildRequires:	libcom_err-devel
 BuildRequires:	libewf-devel
 BuildRequires:	libjpeg-devel
 %{?with_qt:BuildRequires:	libstdc++-devel}
@@ -161,7 +161,8 @@ Graficzny interfejs użytkownika QPhotoRec.
 %{__automake}
 %configure \
 	--bindir=%{_sbindir} \
-	%{?with_qt:--enable-qt}
+	%{?__enable_disable qt qt} \
+	--disable-silent-rules
 %{__make}
 
 %install
@@ -171,7 +172,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 # packaged as %doc
-%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -185,9 +186,17 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man8/fidentify.8*
 %{_mandir}/man8/photorec.8*
 %{_mandir}/man8/testdisk.8*
+%lang(zh_CN) %{_mandir}/zh_CN/man8/fidentify.8*
+%lang(zh_CN) %{_mandir}/zh_CN/man8/photorec.8*
+%lang(zh_CN) %{_mandir}/zh_CN/man8/testdisk.8*
 
 %if %{with qt}
 %files gui
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_sbindir}/qphotorec
+%{_desktopdir}/qphotorec.desktop
+%{_iconsdir}/hicolor/48x48/apps/qphotorec.png
+%{_iconsdir}/hicolor/scalable/apps/qphotorec.svg
+%{_mandir}/man8/qphotorec.8*
+%lang(zh_CN) %{_mandir}/zh_CN/man8/qphotorec.8*
 %endif
