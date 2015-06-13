@@ -15,7 +15,7 @@ Source0:	http://www.cgsecurity.org/%{name}-%{version}.tar.bz2
 # Source0-md5:	f0cfe4ca9dd35f2878b2704251665e9f
 Patch0:		%{name}-ac.patch
 URL:		http://www.cgsecurity.org/wiki/TestDisk
-%{?with_qt:BuildRequires:	QtGui-devel >= 4}
+%{?with_qt:BuildRequires:	QtGui-devel >= 4.0.1}
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
 BuildRequires:	e2fsprogs-devel
@@ -143,6 +143,7 @@ Summary:	QPhotoRec graphical user interface
 Summary(pl.UTF-8):	Graficzny interfejs użytkownika QPhotoRec
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
+Requires:	QtGui >= 4.0.1
 
 %description gui
 QPhotoRec graphical user interface.
