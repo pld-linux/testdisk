@@ -7,19 +7,21 @@ Summary(fr.UTF-8):	Outil pour vérifier et restorer des partitions
 Summary(pl.UTF-8):	Narzędzie sprawdzające i odzyskujące partycje
 Summary(ru.UTF-8):	Программа для проверки и восстановления разделов диска
 Name:		testdisk
-Version:	7.0
-Release:	3
+Version:	7.1
+Release:	1
 License:	GPL v2+
 Group:		Applications/System
-Source0:	http://www.cgsecurity.org/%{name}-%{version}.tar.bz2
-# Source0-md5:	f0cfe4ca9dd35f2878b2704251665e9f
-Patch0:		%{name}-ac.patch
-URL:		http://www.cgsecurity.org/wiki/TestDisk
-%{?with_qt:BuildRequires:	QtGui-devel >= 4.0.1}
+#Source0Download: https://www.cgsecurity.org/wiki/TestDisk_Download
+Source0:	https://www.cgsecurity.org/%{name}-%{version}.tar.bz2
+# Source0-md5:	57d78ffee1c076ef4cf541a74f8d52d4
+URL:		https://www.cgsecurity.org/wiki/TestDisk
+%if %{with qt}
+BuildRequires:	Qt5Gui-devel >= 5.0.0
+BuildRequires:	Qt5Widgets-devel >= 5.0.0
+%endif
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake
 BuildRequires:	e2fsprogs-devel
-#BuildRequires:	libcarvpath-devel
 BuildRequires:	libcom_err-devel
 BuildRequires:	libewf-devel
 BuildRequires:	libjpeg-devel
@@ -30,7 +32,7 @@ BuildRequires:	ntfs-3g-devel
 BuildRequires:	openssl-devel
 BuildRequires:	pkgconfig
 BuildRequires:	progsreiserfs-devel >= 0.3.1-1.rc8.1
-%{?with_qt:BuildRequires:	qt4-build >= 4}
+%{?with_qt:BuildRequires:	qt5-build >= 5.0.0}
 BuildRequires:	zlib-devel
 Requires:	uname(release) >= 2.6.18
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -153,7 +155,6 @@ Graficzny interfejs użytkownika QPhotoRec.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__aclocal}
@@ -162,7 +163,7 @@ Graficzny interfejs użytkownika QPhotoRec.
 %{__automake}
 %configure \
 	--bindir=%{_sbindir} \
-	%{?__enable_disable qt qt} \
+	%{?__enable_disable qt} \
 	--disable-silent-rules
 %{__make}
 
@@ -180,7 +181,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog INFO NEWS README THANKS *.html
+%doc AUTHORS ChangeLog INFO NEWS README.md THANKS *.html
 %attr(755,root,root) %{_sbindir}/fidentify
 %attr(755,root,root) %{_sbindir}/photorec
 %attr(755,root,root) %{_sbindir}/testdisk
