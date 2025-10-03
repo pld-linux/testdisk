@@ -7,13 +7,14 @@ Summary(fr.UTF-8):	Outil pour vérifier et restorer des partitions
 Summary(pl.UTF-8):	Narzędzie sprawdzające i odzyskujące partycje
 Summary(ru.UTF-8):	Программа для проверки и восстановления разделов диска
 Name:		testdisk
-Version:	7.1
-Release:	2
+Version:	7.2
+Release:	1
 License:	GPL v2+
 Group:		Applications/System
 #Source0Download: https://www.cgsecurity.org/wiki/TestDisk_Download
 Source0:	https://www.cgsecurity.org/%{name}-%{version}.tar.bz2
-# Source0-md5:	57d78ffee1c076ef4cf541a74f8d52d4
+# Source0-md5:	c6809b6fd06b5022467c8faa32d49a27
+Patch0:		ewf-detect.patch
 URL:		https://www.cgsecurity.org/wiki/TestDisk
 %if %{with qt}
 BuildRequires:	Qt5Gui-devel >= 5.0.0
@@ -145,7 +146,6 @@ Summary:	QPhotoRec graphical user interface
 Summary(pl.UTF-8):	Graficzny interfejs użytkownika QPhotoRec
 Group:		X11/Applications
 Requires:	%{name} = %{version}-%{release}
-Requires:	QtGui >= 4.0.1
 
 %description gui
 QPhotoRec graphical user interface.
@@ -155,6 +155,7 @@ Graficzny interfejs użytkownika QPhotoRec.
 
 %prep
 %setup -q
+%patch -P0 -p1
 
 %build
 %{__aclocal}

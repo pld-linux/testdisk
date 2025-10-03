@@ -1,0 +1,11 @@
+--- testdisk-7.2/configure.ac~	2024-02-02 16:56:43.000000000 +0100
++++ testdisk-7.2/configure.ac	2025-10-03 23:46:26.926665179 +0200
+@@ -853,7 +853,7 @@
+   ],[
+   AC_MSG_WARN(No ewf library detected)
+   ],[])
+-  LIBS="$OLDLIBS"
++  LIBS="$OLDLIBS -lewf"
+ else
+   AC_MSG_WARN(Use of ewf library disabled)
+ fi
